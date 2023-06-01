@@ -1,0 +1,8 @@
+{
+    "project_name": "project name",
+    "__lower_project_name": "{{ cookiecutter.project_name|lower }}",
+    "__project_slug": "{{ cookiecutter.__lower_project_name|replace(' ', '-') }}",
+    "__package_name": "{{ cookiecutter.__project_slug|replace('-', '_') }}",
+    "description": "one shot description of project",
+    "initial_version": "0.0.1",
+}

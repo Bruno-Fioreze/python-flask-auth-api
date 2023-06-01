@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "003-arquitetura-flask"
+version = "0.1.0"
+description = ""
+authors = ["bnrun"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.3.2"
+SQLAlchemy = "^2.0.15"
+Flask-DebugToolbar = "^0.13.1"
+flake8 = "^6.0.0"
+black = "^23.3.0"
+isort = "^5.12.0"
+ipdb = "^0.13.13"
+pytest-flask = "^1.2.0"
+dynaconf = "2.2.1"
+Flask-RESTful = "^0.3.10"
+flask-shell-ipython = "0.4.1"
+Flask-SQLAlchemy = "^3.0.3"
+SQLAlchemy-serializer = "^1.4.1"
+pre-commit = "^3.3.2"
+
+[tool.poetry.dev-dependencies]
+Flask-CLI = "^0.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
