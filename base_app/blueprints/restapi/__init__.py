@@ -8,5 +8,5 @@ api = Api(bp)
 
 
 def init_app(app):
-    api.add_resource(AuthResource, "/auth/sigin")
+    api.add_resource(AuthResource, "/auth/")
     app.register_blueprint(bp)
