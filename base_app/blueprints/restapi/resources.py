@@ -1,7 +1,7 @@
 from flask import abort, jsonify
 from flask_restful import Resource
 
-from myproject.models import Product
+from base_app.models import Product
 
 
 class ProductResource(Resource):

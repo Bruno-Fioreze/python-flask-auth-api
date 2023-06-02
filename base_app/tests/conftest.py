@@ -1,8 +1,8 @@
 import pytest
 
-from myproject.app import create_app, minimal_app
-from myproject.ext.commands import populate_db
-from myproject.ext.database import db
+from base_app.app import create_app, minimal_app
+from base_app.ext.commands import populate_db
+from base_app.ext.database import db
 
 
 @pytest.fixture(scope="session")

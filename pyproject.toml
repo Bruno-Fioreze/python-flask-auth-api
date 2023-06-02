@@ -20,6 +20,7 @@ flask-shell-ipython = "0.4.1"
 Flask-SQLAlchemy = "^3.0.3"
 SQLAlchemy-serializer = "^1.4.1"
 pre-commit = "^3.3.2"
+gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
 Flask-CLI = "^0.4.0"

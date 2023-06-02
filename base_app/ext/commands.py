@@ -1,5 +1,5 @@
-from pydaria.ext.database import db
-from pydaria.models import Product
+from base_app.ext.database import db
+from base_app.models import Product
 
 
 def create_db():

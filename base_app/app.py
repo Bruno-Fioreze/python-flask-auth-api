@@ -1,6 +1,6 @@
 from flask import Flask
 
-from myproject.ext import configuration
+from base_app.ext import configuration
 
 
 def minimal_app(**config):

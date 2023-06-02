@@ -1,16 +1,16 @@
 [default]
 DEBUG = false
-FLASK_ADMIN_NAME = "{{ cookiecutter.__package_name }} Admin"
+FLASK_ADMIN_NAME = "Base App Admin"
 FLASK_ADMIN_TEMPLATE_MODE = "bootstrap3"
 FLASK_ADMIN_SWATCH = 'cerulean'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
-TITLE = "{{ cookiecutter.__package_name }}"
+TITLE = "Base App"
 SECRET_KEY = "jadkfbsdkjbfbh"
 PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
 EXTENSIONS = [
-    "{{ cookiecutter.__package_name }}.ext.database:init_app",
-    "{{ cookiecutter.__package_name }}.ext.commands:init_app",
-    "{{ cookiecutter.__package_name }}.blueprints.restapi:init_app",
+    "base_app.ext.database:init_app",
+    "base_app.ext.commands:init_app",
+    "base_app.blueprints.restapi:init_app",
 ]
 
 

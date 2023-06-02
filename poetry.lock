@@ -287,6 +287,20 @@ docs = ["sphinx", "docutils (<0.18)"]
 test = ["objgraph", "psutil"]
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "identify"
 version = "2.5.24"
 description = "File identification library for Python"
@@ -818,7 +832,7 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "1a6ed4ed17a8ffa5e0c54722172f687f6a51befed1e06a8c658f7f22710bcd12"
+content-hash = "8e930511e565af170f3b2ed661d072d3881facc681f125631224f2a1567e5c87"
 
 [metadata.files]
 aniso8601 = []
@@ -844,6 +858,7 @@ flask-restful = []
 flask-shell-ipython = []
 flask-sqlalchemy = []
 greenlet = []
+gunicorn = []
 identify = []
 iniconfig = []
 ipdb = []
