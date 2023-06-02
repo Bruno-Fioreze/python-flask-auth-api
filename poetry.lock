@@ -233,6 +233,22 @@ itsdangerous = "*"
 werkzeug = "*"
 
 [[package]]
+name = "flask-jwt-extended"
+version = "4.5.2"
+description = "Extended JWT integration with Flask"
+category = "main"
+optional = false
+python-versions = ">=3.7,<4"
+
+[package.dependencies]
+Flask = ">=2.0,<3.0"
+PyJWT = ">=2.0,<3.0"
+Werkzeug = ">=0.14"
+
+[package.extras]
+asymmetric_crypto = ["cryptography (>=3.3.1)"]
+
+[[package]]
 name = "flask-restful"
 version = "0.3.10"
 description = "Simple framework for creating REST APIs"
@@ -606,6 +622,20 @@ python-versions = ">=3.7"
 plugins = ["importlib-metadata"]
 
 [[package]]
+name = "pyjwt"
+version = "2.7.0"
+description = "JSON Web Token implementation in Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+crypto = ["cryptography (>=3.4.0)"]
+dev = ["sphinx (>=4.5.0,<5.0.0)", "sphinx-rtd-theme", "zope.interface", "cryptography (>=3.4.0)", "pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)", "pre-commit"]
+docs = ["sphinx (>=4.5.0,<5.0.0)", "sphinx-rtd-theme", "zope.interface"]
+tests = ["pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)"]
+
+[[package]]
 name = "pytest"
 version = "7.3.1"
 description = "pytest: simple powerful testing with Python"
@@ -832,7 +862,7 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "8e930511e565af170f3b2ed661d072d3881facc681f125631224f2a1567e5c87"
+content-hash = "bfd992eeeea38d834533b2b73b7df6fc34d8d24d4c2467a0c9168a888bdb3e3d"
 
 [metadata.files]
 aniso8601 = []
@@ -854,6 +884,7 @@ flake8 = []
 flask = []
 flask-cli = []
 flask-debugtoolbar = []
+flask-jwt-extended = []
 flask-restful = []
 flask-shell-ipython = []
 flask-sqlalchemy = []
@@ -886,6 +917,7 @@ pure-eval = []
 pycodestyle = []
 pyflakes = []
 pygments = []
+pyjwt = []
 pytest = []
 pytest-flask = []
 python-box = []

@@ -6,10 +6,12 @@ FLASK_ADMIN_SWATCH = 'cerulean'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
 TITLE = "Base App"
 SECRET_KEY = "jadkfbsdkjbfbh"
+JWT_SECRET_KEY= "jadkfbsdkjbfbh2"
 PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
 EXTENSIONS = [
     "base_app.ext.database:init_app",
     "base_app.ext.commands:init_app",
+    "base_app.ext.auth:init_app",
     "base_app.blueprints.restapi:init_app",
 ]
 
