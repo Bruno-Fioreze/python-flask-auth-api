@@ -7,5 +7,4 @@
 
 # Próximos passos
 
-> 1 - Criar um docker-compose.yaml com o postgres e com o container da api
-> 2 - remover o .env
+- 1 adicioanr o swagger
