@@ -1,5 +1,5 @@
 [default]
-DEBUG = false
+FLASK_DEBUG=0
 FLASK_ADMIN_NAME = "Base App Admin"
 FLASK_ADMIN_TEMPLATE_MODE = "bootstrap3"
 FLASK_ADMIN_SWATCH = 'cerulean'
@@ -12,6 +12,7 @@ EXTENSIONS = [
     "base_app.ext.database:init_app",
     "base_app.ext.commands:init_app",
     "base_app.ext.auth:init_app",
+    "base_app.ext.swagger:init_app",
     "base_app.blueprints.restapi:init_app",
 ]
 
@@ -22,7 +23,7 @@ EXTENSIONS = [
     "dynaconf_merge_unique"  # to reuse extensions list from [default]
 ]
 TEMPLATES_AUTO_RELOAD = true
-DEBUG = true
+FLASK_DEBUG=1
 DEBUG_TOOLBAR_ENABLED = true
 DEBUG_TB_INTERCEPT_REDIRECTS = false
 DEBUG_TB_PROFILER_ENABLED = true

@@ -4,14 +4,16 @@ from flask_jwt_extended import (
     jwt_required,
     get_jwt,
 )
-from flask_restful import Resource
+from flask_restx import Resource
 from flask import request, jsonify
 from datetime import timedelta
-
 
 class AuthResource(Resource):
     @jwt_required()
     def get(self):
+        """
+        Descrição da operação GET do endpoint /auth/
+        """
         current_user = get_jwt_identity()
 
         jwt_data = get_jwt()
@@ -22,6 +24,9 @@ class AuthResource(Resource):
         return {"data": data}, 200
 
     def post(self):
+        """
+        Descrição da operação POST do endpoint /auth/
+        """
         username = request.json.get("username")
         password = request.json.get("password")
 
