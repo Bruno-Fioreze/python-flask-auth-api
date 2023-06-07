@@ -1,0 +1,29 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Exemplo de API",
+      "description": "Uma API de exemplo usando Swagger"
+    },
+    "paths": {
+      "/hello": {
+        "get": {
+          "summary": "Obtém a mensagem de saudação",
+          "responses": {
+            "200": {
+              "description": "Sucesso",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "example": "Olá, Mundo!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

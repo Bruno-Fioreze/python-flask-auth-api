@@ -4,16 +4,30 @@ from flask_jwt_extended import (
     jwt_required,
     get_jwt,
 )
-from flask_restx import Resource
+from flask_restful import Resource
 from flask import request, jsonify
 from datetime import timedelta
+from flasgger import SwaggerView
 
-class AuthResource(Resource):
+
+class AuthMeResource(Resource, SwaggerView):
+    parameters = [
+        {
+            "name": "JWT Token",
+            "in": "header",
+            "type": "string",
+            "required": True,
+            "example": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...",
+        }
+    ]
+    responses = {
+        200: {
+            "description": "A list of colors (may be filtered by palette)",
+        }
+    }
+
     @jwt_required()
     def get(self):
-        """
-        Descrição da operação GET do endpoint /auth/
-        """
         current_user = get_jwt_identity()
 
         jwt_data = get_jwt()
@@ -23,10 +37,31 @@ class AuthResource(Resource):
 
         return {"data": data}, 200
 
+
+class AuthSignInResource(Resource, SwaggerView):
+
+    parameters = [
+        {
+            "name": "Payload",
+            "in": "body",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "username": {"type": "string"},
+                    "password": {"type": "string"},
+                },
+                "required": ["username", "password"],
+            },
+        }
+    ]
+    responses = {
+        200: {
+            "description": "A list of colors (may be filtered by palette)",
+        }
+    }
+
     def post(self):
-        """
-        Descrição da operação POST do endpoint /auth/
-        """
+
         username = request.json.get("username")
         password = request.json.get("password")
 
