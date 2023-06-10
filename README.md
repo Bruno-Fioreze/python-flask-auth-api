@@ -7,4 +7,4 @@
 
 # Próximos passos
 
-- 1 adicioanr o swagger
+- trocar o banco por PostgreSQL
