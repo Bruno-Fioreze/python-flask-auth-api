@@ -1,5 +1,6 @@
 from base_app.ext.database import db
 
+
 def create_db():
     """Creates database"""
     db.create_all()
