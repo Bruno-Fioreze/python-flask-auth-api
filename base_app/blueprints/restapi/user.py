@@ -7,8 +7,30 @@ from base_app.ext.database import db
 from marshmallow import ValidationError
  
 class UserResource(Resource, SwaggerView):
+    parameters = [
+        {
+            "name": "Payload",
+            "in": "body",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "username": {"type": "string"},
+                    "password": {"type": "string"},
+                },
+                "required": ["username", "password"],
+            },
+        }
+    ]
+    responses = {
+        200: {
+            "description": "created user with successful",
+        },
+        400: {
+            "description": "validation error",
+        }
+    }
     schema = UserSchema()
-
+    
     def post(self):
         try:
             data = self.schema.load(request.json)
