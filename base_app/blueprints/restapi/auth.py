@@ -13,6 +13,7 @@ from base_app.schemas import UserSchema
 from base_app.ext.database import db
 from marshmallow import ValidationError
 
+
 class AuthMeResource(Resource, SwaggerView):
     parameters = [
         {
@@ -68,18 +69,15 @@ class AuthSignInResource(Resource, SwaggerView):
     def post(self):
         try:
             data = self.schema.load(request.json)
-            user = User.query.filter_by(username=data['username']).first()
+            user = User.query.filter_by(username=data["username"]).first()
             if not user:
-                return {'error': 'username not exists'}, 400
-            
-            matched = user.check_password(data['password'])
-            if not matched:
-                return {'error': 'password is not valid'}, 400
+                return {"error": "username not exists"}, 400
 
-            additional_data = {
-                "id": user.id,
-                "username": user.username
-            }
+            matched = user.check_password(data["password"])
+            if not matched:
+                return {"error": "password is not valid"}, 400
+
+            additional_data = {"id": user.id, "username": user.username}
 
             access_token = create_access_token(
                 identity=data["username"],
