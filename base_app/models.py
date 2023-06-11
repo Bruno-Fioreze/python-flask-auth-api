@@ -16,5 +16,5 @@ class User(db.Model, SerializerMixin):
     def generate_password(self):
         self.password = bcrypt.hash(self.password)
 
-    def verify_password(self, password):
-        return bcrypt.verify(password, self.password_hash)
+    def check_password(self, password):
+        return bcrypt.verify(password, self.password)
